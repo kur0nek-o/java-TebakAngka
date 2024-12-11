@@ -44,7 +44,27 @@ class Main {
 				
 				answerKey = rand.nextInt(range);
 				
-				System.out.println(answerKey);
+				System.out.println("");
+				
+				int tryCount = 0;
+				
+				while (true) {
+					tryCount++;
+					System.out.print("Masukan jawaban anda : ");
+					
+					int answer = input.nextInt();
+					
+					if (answer == answerKey) {
+						System.out.println("Selamat! tebakan anda benar :)");
+						System.out.println("Anda menebak sebanyak " + tryCount + " kali");
+						
+						break;
+					} else if (answer > answerKey) {
+						System.out.println("Tebakan anda terlalu besar");
+					} else if (answer < answerKey) {
+						System.out.println("Tebakan anda terlalu kecil");
+					}
+				}
 				
 				break;
 			} catch (Exception e) {
