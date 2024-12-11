@@ -7,6 +7,7 @@ class Main {
 		Random rand = new Random();
 		Scanner input = new Scanner(System.in);
 		
+		int range = 0;
 		int answerKey;
 		
 		System.out.println("Selamat datang di game 'Tebak Angka' :)");
@@ -25,12 +26,15 @@ class Main {
 				
 				switch (difficulty) {
 					case 1:
+						range = 10;
 						System.out.println("Anda memilih kesulitan level mudah");
 						break;
 					case 2:
+						range = 20;
 						System.out.println("Anda memilih kesulitan level Sedang");
 						break;
 					case 3:
+						range = 50;
 						System.out.println("Anda memilih kesulitan level Sulit");
 						break;
 					default:
@@ -38,9 +42,14 @@ class Main {
 						break;
 				}
 				
+				answerKey = rand.nextInt(range);
+				
+				System.out.println(answerKey);
+				
 				break;
 			} catch (Exception e) {
 				System.out.println("Terjadi kesalahan : " + e);
+				input.nextLine();
 				
 				break;
 			}
